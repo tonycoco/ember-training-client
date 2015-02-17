@@ -1,1 +1,18 @@
-Editing {{email}}
+<h1>
+  {{input type="text" value=firstName}}
+  {{input type="text" value=lastName}}
+</h1>
+
+<dl>
+  <dt>phone</dt>
+  <dd>{{input type="text" value=phoneNumber}}</dd>
+</dl>
+
+<dl>
+  <dt>email</dt>
+  <dd>{{input type="text" value=email}}</dd>
+</dl>
+
+<div class="buttons">
+  <span {{action 'done' this}} class="button">Done</span>
+</div>
