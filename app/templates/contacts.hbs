@@ -1,0 +1,15 @@
+{{#link-to 'contacts.new'}}Add a contact{{/link-to}}
+
+<ul>
+  {{#each contact in model}}
+    <li>
+      {{#link-to 'contact' contact}}
+        {{contact.email}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+
+<div>
+  {{outlet}}
+</div>
