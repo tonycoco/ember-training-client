@@ -1,0 +1,107 @@
+@import "reset";
+
+$white: #fff;
+$black: #111;
+$gray: #f0eff5;
+$gray-border: #e8e8e8;
+
+html {
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.button {
+  border: 1px solid #dadada;
+  border-radius: 4px;
+  padding: 4px 15px 2px;
+  text-decoration: none;
+  color: $black;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+  background-color: $white;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body,
+body > .ember-view {
+  height: 100%;
+  width: 100%;
+  background-color: $gray;
+}
+
+.actions,
+.list,
+.viewport {
+  height: 100%;
+  float: left;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 25px 20px;
+}
+
+.actions {
+  width: 20%;
+  border-right: 1px solid $gray-border;
+}
+
+.list {
+  width: 30%;
+  background-color: $white;
+  border-right: 1px solid $gray-border;
+
+  a {
+    text-decoration: none;
+    color: $black;
+  }
+
+  ul {
+    li {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.viewport {
+  width: 50%;
+  background-color: $white;
+  position: relative;
+
+  .buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 13px 20px;
+    text-align: right;
+  }
+
+  h1 {
+    font-weight: 300;
+    font-size: 24px;
+    margin: 0 0 30px 100px;
+  }
+
+  dl {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 10px;
+
+    dt {
+      color: #808080;
+      text-align: right;
+      width: 100px;
+      padding-right: 10px;
+      float: left;
+    }
+  }
+}

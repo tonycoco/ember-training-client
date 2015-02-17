@@ -1,15 +1,20 @@
-{{#link-to 'contacts.new'}}Add a contact{{/link-to}}
+<div class="actions">
+  {{#link-to 'contacts.new' class='button'}}+{{/link-to}}
+</div>
 
-<ul>
-  {{#each contact in model}}
-    <li>
-      {{#link-to 'contact' contact}}
-        {{contact.email}}
-      {{/link-to}}
-    </li>
-  {{/each}}
-</ul>
+<div class="list">
+  <ul>
+    {{#each contact in model}}
+      <li>
+        {{#link-to 'contact' contact}}
+          <strong>{{contact.firstName}}</strong>
+          {{contact.lastName}}
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+</div>
 
-<div>
+<div class="viewport">
   {{outlet}}
 </div>

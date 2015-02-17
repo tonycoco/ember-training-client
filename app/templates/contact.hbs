@@ -1,3 +1,18 @@
-Details for {{email}}
+<h1>
+  {{firstName}}
+  {{lastName}}
+</h1>
 
-{{#link-to 'contacts.edit' this}}Edit{{/link-to}}
+<dl>
+  <dt>phone</dt>
+  <dd>{{phoneNumber}}</dd>
+</dl>
+
+<dl>
+  <dt>email</dt>
+  <dd>{{mail-to email}}</dd>
+</dl>
+
+<div class="buttons">
+  {{#link-to 'contacts.edit' this class='button'}}Edit{{/link-to}}
+</div>
