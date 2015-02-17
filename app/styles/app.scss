@@ -4,6 +4,9 @@ $white: #fff;
 $black: #111;
 $gray: #f0eff5;
 $gray-border: #e8e8e8;
+$gray-button-border: #dadada;
+$gray-list-separator: #e6e6e6;
+$blue: #3191ff;
 
 html {
   box-sizing: border-box;
@@ -17,18 +20,26 @@ html {
   box-sizing: inherit;
 }
 
+a {
+  color: $blue;
+}
+
 strong {
   font-weight: bold;
 }
 
 .button {
-  border: 1px solid #dadada;
+  border: 1px solid $gray-button-border;
   border-radius: 4px;
   padding: 4px 15px 2px;
   text-decoration: none;
   color: $black;
   box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
   background-color: $white;
+
+  &.button-done {
+    color: $blue;
+  }
 }
 
 html,
@@ -52,6 +63,12 @@ body > .ember-view {
 .actions {
   width: 20%;
   border-right: 1px solid $gray-border;
+
+  h2 {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 25px;
+  }
 }
 
 .list {
@@ -60,8 +77,8 @@ body > .ember-view {
   border-right: 1px solid $gray-border;
 
   a {
-    text-decoration: none;
     color: $black;
+    text-decoration: none;
   }
 
   ul {
@@ -82,7 +99,15 @@ body > .ember-view {
     left: 0;
     right: 0;
     padding: 13px 20px;
-    text-align: right;
+
+    .button {
+      float: left;
+    }
+
+    .button-edit,
+    .button-done {
+      float: right;
+    }
   }
 
   h1 {
@@ -100,7 +125,7 @@ body > .ember-view {
 
   dl {
     padding-bottom: 8px;
-    border-bottom: 1px solid #e6e6e6;
+    border-bottom: 1px solid $gray-list-separator;
     margin-bottom: 8px;
     line-height: 23px;
 

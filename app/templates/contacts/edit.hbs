@@ -14,5 +14,6 @@
 </dl>
 
 <div class="buttons">
-  <span {{action 'done' this}} class="button">Done</span>
+  {{#link-to 'contacts.new' class='button'}}&plus;{{/link-to}}
+  <span {{action 'done' this}} class="button button-done">Done</span>
 </div>
