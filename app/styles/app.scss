@@ -8,6 +8,7 @@ $gray-button-border: #dadada;
 $gray-list-separator: #e6e6e6;
 $blue: #3191ff;
 $blue-list-selected: #0069d9;
+$red: #f00;
 
 html {
   box-sizing: border-box;
@@ -102,6 +103,10 @@ strong {
   background-color: $white;
   padding: 25px 20px;
   position: relative;
+
+  .error {
+    border-color: $red;
+  }
 
   h1 {
     font-weight: 300;
