@@ -10,11 +10,17 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    save: function(contact) {
-      return this.transitionTo('contact', contact);
+    save: function() {
+      var self = this;
+      var contact = this.controller.get('model');
+      contact.save().then(function() {
+        return self.transitionTo('contact', contact);
+      });
     },
 
-    cancel: function(contact) {
+    cancel: function() {
+      var contact = this.controller.get('model');
+      contact.rollback();
       return this.transitionTo('contact', contact);
     }
   }

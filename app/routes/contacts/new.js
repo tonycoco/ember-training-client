@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  model: function() {
+    return this.store.createRecord('contact');
+  },
+
   renderTemplate: function() {
     this._super();
     this.render('contacts/actions/new', {
@@ -10,11 +14,17 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    save: function(contact) {
-      return this.transitionTo('contact', contact);
+    save: function() {
+      var self = this;
+      var contact = this.controller.get('model');
+      contact.save().then(function() {
+        return self.transitionTo('contact', contact);
+      });
     },
 
-    cancel: function(contact) {
+    cancel: function() {
+      var contact = this.controller.get('model');
+      contact.deleteRecord();
       return this.transitionTo('contacts');
     }
   }
