@@ -10,14 +10,22 @@ $blue: #3191ff;
 
 html {
   box-sizing: border-box;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 13px;
 }
 
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+html,
+body,
+body > .ember-view {
+  height: 100%;
+  width: 100%;
+  background-color: $gray;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
 }
 
 a {
@@ -31,28 +39,26 @@ strong {
 .button {
   border: 1px solid $gray-button-border;
   border-radius: 4px;
-  padding: 4px 15px 2px;
+  padding: 2px 16px 0;
+  line-height: 21px;
+  display: inline-block;
   text-decoration: none;
   color: $black;
   box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
   background-color: $white;
 
-  &.button-done {
+  &.button-blue {
     color: $blue;
+  }
+
+  &.button-right {
+    float: right;
   }
 }
 
-html,
-body,
-body > .ember-view {
-  height: 100%;
-  width: 100%;
-  background-color: $gray;
-}
-
-.actions,
+.rail,
 .list,
-.viewport {
+.contact {
   height: 100%;
   float: left;
   overflow-x: hidden;
@@ -60,7 +66,7 @@ body > .ember-view {
   padding: 25px 20px;
 }
 
-.actions {
+.rail {
   width: 20%;
   border-right: 1px solid $gray-border;
 
@@ -88,27 +94,10 @@ body > .ember-view {
   }
 }
 
-.viewport {
+.contact {
   width: 50%;
   background-color: $white;
   position: relative;
-
-  .buttons {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 13px 20px;
-
-    .button {
-      float: left;
-    }
-
-    .button-edit,
-    .button-done {
-      float: right;
-    }
-  }
 
   h1 {
     font-weight: 300;
@@ -141,4 +130,13 @@ body > .ember-view {
       float: left;
     }
   }
+}
+
+.actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 13px 20px;
+  overflow: hidden;
 }
