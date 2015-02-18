@@ -7,5 +7,15 @@ export default Ember.Route.extend({
       into: 'contacts',
       outlet: 'actions'
     });
+  },
+
+  actions: {
+    save: function(contact) {
+      return this.transitionTo('contact', contact);
+    },
+
+    cancel: function(contact) {
+      return this.transitionTo('contact', contact);
+    }
   }
 });

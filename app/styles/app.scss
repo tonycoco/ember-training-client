@@ -7,6 +7,7 @@ $gray-border: #e8e8e8;
 $gray-button-border: #dadada;
 $gray-list-separator: #e6e6e6;
 $blue: #3191ff;
+$blue-list-selected: #0069d9;
 
 html {
   box-sizing: border-box;
@@ -63,12 +64,12 @@ strong {
   float: left;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding: 25px 20px;
 }
 
 .rail {
   width: 20%;
   border-right: 1px solid $gray-border;
+  padding: 25px 20px;
 
   h2 {
     font-size: 18px;
@@ -85,11 +86,12 @@ strong {
   a {
     color: $black;
     text-decoration: none;
-  }
+    padding: 4px 20px;
+    display: block;
 
-  ul {
-    li {
-      margin-bottom: 8px;
+    &.active {
+      color: $white;
+      background-color: $blue-list-selected;
     }
   }
 }
@@ -97,6 +99,7 @@ strong {
 .contact {
   width: 50%;
   background-color: $white;
+  padding: 25px 20px;
   position: relative;
 
   h1 {
